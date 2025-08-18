@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import React from 'react';
 import { FaArrowUpLong } from 'react-icons/fa6';
-import herovideo from '../assets/herovideo.mp4';
+import herovideo from '../assets/herovideo1.mp4';
 
 function LandingPageVideo() {
   return (
@@ -48,14 +48,14 @@ function LandingPageVideo() {
             </div>
           );
         })} */}
-        {['We Build', 'Strategic', 'Solutions'].map((item, index) => (
+        {['We Build ', 'Your Strategic', 'Solutions'].map((item, index) => (
           <div
             key={index}
             className={`w-fit mx-auto flex items-end justify-center gap-2 ${
               index === 1 ? 'mr-[]' : ''
             }`}
           >
-            {index === 1 && (
+            {/* {index === 1 && (
               <motion.div
                 initial={{ width: 0 }}
                 animate={{ width: '8.5vw' }}
@@ -68,14 +68,14 @@ function LandingPageVideo() {
                   alt=""
                 />
               </motion.div>
-            )}
+            )} */}
 
             <div className="overflow-hidden">
               <motion.h1
                 initial={{ y: '100%' }}
                 animate={{ y: 0 }}
                 transition={{ ease: [0.76, 0, 0.24, 1], duration: 1 }}
-                className="font-[IC] text-white uppercase md:text-[6.5vw] sm:text-[15vw] text-[10vw] md:leading-[7vw] sm:leading-[16vw] leading-[17vw] font-semibold"
+                className="font-[IC] text-white/90 uppercase md:text-[6vw] sm:text-[15vw] text-[8vw] md:leading-[7vw] sm:leading-[16vw] leading-[15vw] font-semibold"
               >
                 {item}
               </motion.h1>

@@ -1,4 +1,5 @@
 import React from 'react';
+import Logo from '../assets/logo1.png'; // adjust the path to your logo
 
 function Footer() {
   return (
@@ -9,13 +10,19 @@ function Footer() {
       <div className="flex flex-col md:flex-row justify-between gap-12 md:gap-20">
         {/* Left section */}
         <div className="flex flex-col justify-between gap-10 md:gap-20 w-full md:w-1/2">
+          {/* Logo */}
           <div>
-            <h1 className="text-[8vw] md:text-[4vw] font-bold uppercase leading-none">
+            <img
+              src={Logo}
+              alt="Company Logo"
+              className="w-32 md:w-40 object-contain mb-6"
+            />
+            {/* <h1 className="text-[8vw] md:text-[4vw] font-bold uppercase leading-none">
               Strategic
             </h1>
             <h1 className="text-[8vw] md:text-[4vw] font-bold uppercase leading-none">
               Solutions
-            </h1>
+            </h1> */}
           </div>
 
           {/* Tagline */}
