@@ -13,7 +13,7 @@ import {
 
 const BusinessHeroSection = () => {
   const trustIndicators = [
-    { icon: Users, text: 'Clients Served', count: '500+' },
+    { icon: Users, text: 'Clients Served', count: '50+' },
     { icon: TrendingUp, text: 'Success Rate', count: '95%' },
     { icon: Award, text: 'Years Excellence', count: '10+' },
     { icon: Globe, text: 'Market Leader', count: 'BD' },
@@ -190,7 +190,7 @@ const BusinessHeroSection = () => {
                 <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center">
                   <Users className="w-6 h-6 text-white" />
                 </div>
-                <p className="text-2xl font-bold text-blue-600">500+</p>
+                <p className="text-2xl font-bold text-blue-600">50+</p>
                 <p className="text-xs text-gray-600 font-semibold">
                   Happy Clients
                 </p>
