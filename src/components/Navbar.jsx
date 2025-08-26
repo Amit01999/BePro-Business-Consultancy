@@ -200,13 +200,13 @@ function Navbar() {
             onMouseLeave={() => setSisterOpen(false)}
           >
             <a
-              href="/fly8"
+              href="https://www.fly8.global/"
               className="text-white hover:text-purple-500 transition-colors"
             >
               Fly8
             </a>
             <a
-              href="/bepro-it"
+              href="https://bepro.it.com/"
               className="text-white hover:text-purple-500 transition-colors"
             >
               BeProIT

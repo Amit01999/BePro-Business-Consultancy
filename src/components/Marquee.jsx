@@ -16,7 +16,7 @@ function Marquee() {
           transition={{ repeat: Infinity, ease: 'linear', duration: 3 }}
           className='font-thin font-[IC] leading-none tracking-tighter text-[12vw] md:text-[7vw] pr-20 uppercase -mb-[2vw] py-7  font-["Founders Grotesk"]'
         >
-          Your Growth
+          Empowering Success
         </motion.h1>
         <motion.h1
           initial={{ x: '0' }}
@@ -24,7 +24,7 @@ function Marquee() {
           transition={{ repeat: Infinity, ease: 'linear', duration: 3 }}
           className=' font-thin font-[IC] leading-none tracking-tighter text-[12vw] md:text-[7vw] uppercase -mb-[2vw] py-7  font-["Founders Grotesk"] '
         >
-          Our Expertiese
+          Elevating Business: BePro Consultancy
         </motion.h1>
       </div>
     </div>

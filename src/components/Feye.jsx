@@ -146,11 +146,15 @@ class Particle {
 }
 
 const DEFAULT_WORDS = [
-  'STRATEGY',
-  'GROWTH',
-  'INSIGHT',
-  'SUCCESS',
-  'YOUR PARTNER',
+  'Strategy',
+  'Growth',
+  'Efficiency',
+  'Innovation',
+  'Success',
+  'Expertise',
+  'Solutions',
+  'Performance',
+  'Transformation',
 ];
 
 export default function Feye({ words = DEFAULT_WORDS }) {
