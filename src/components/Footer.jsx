@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Logo from '../assets/logo1.png';
-
+import { Linkedin, Twitter, Instagram } from 'lucide-react'; // Social icons
 function Footer() {
   const [hoveredLink, setHoveredLink] = useState(null);
   const currentYear = new Date().getFullYear();
@@ -184,6 +184,7 @@ function Footer() {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* Email */}
                 <div className="bg-zinc-900 rounded-xl p-6 border border-zinc-800 hover:border-[#CDEA68] transition-all duration-300">
                   <div className="flex items-center mb-3">
                     <div className="w-3 h-3 bg-[#CDEA68] rounded-full mr-3 animate-pulse" />
@@ -199,6 +200,7 @@ function Footer() {
                   </a>
                 </div>
 
+                {/* Call */}
                 <div className="bg-zinc-900 rounded-xl p-6 border border-zinc-800 hover:border-[#CDEA68] transition-all duration-300">
                   <div className="flex items-center mb-3">
                     <div className="w-3 h-3 bg-[#CDEA68] rounded-full mr-3 animate-pulse" />
@@ -212,6 +214,31 @@ function Footer() {
                   >
                     +8801686395927
                   </a>
+                </div>
+
+                {/* Offices (Both in One Card) */}
+                <div className="bg-zinc-900 rounded-xl p-6 border border-zinc-800 hover:border-[#CDEA68] transition-all duration-300 md:col-span-2">
+                  <div className="flex items-center mb-3">
+                    <div className="w-3 h-3 bg-[#CDEA68] rounded-full mr-3 animate-pulse" />
+                    <span className="text-[#CDEA68] font-semibold">
+                      Our Offices
+                    </span>
+                  </div>
+                  <div className="space-y-3 text-white">
+                    <p>
+                      <span className="font-semibold text-[#CDEA68]">
+                        Dhaka Office:{' '}
+                      </span>
+                      House 6 (5th Floor), Road 2/B, J Block, Baridhara, Dhaka
+                      1212.
+                    </p>
+                    <p>
+                      <span className="font-semibold text-[#CDEA68]">
+                        Khulna Office:{' '}
+                      </span>
+                      House 115/A, Road 2, Nirjon R/A, Nirala, Khulna 9100.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -246,43 +273,50 @@ function Footer() {
 
               {/* Social links */}
               <div className="flex justify-center lg:justify-end space-x-4 mt-8">
-                {['LinkedIn', 'Twitter', 'Instagram'].map((social, idx) => (
-                  <button
-                    key={idx}
-                    className="w-12 h-12 bg-zinc-900 hover:bg-[#CDEA68] text-white hover:text-black rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:rotate-12 border border-zinc-800 hover:border-[#CDEA68]"
+                {/* Social links */}
+                <div className="flex justify-center lg:justify-end space-x-3">
+                  <a
+                    href="#"
+                    className="w-10 h-10 bg-zinc-900 hover:bg-[#CDEA68] text-white hover:text-black rounded-full flex items-center justify-center transition-all duration-300 border border-zinc-800 hover:border-[#CDEA68]"
                   >
-                    {social.slice(0, 2)}
-                  </button>
-                ))}
+                    <Linkedin size={18} />
+                  </a>
+                  <a
+                    href="#"
+                    className="w-10 h-10 bg-zinc-900 hover:bg-[#CDEA68] text-white hover:text-black rounded-full flex items-center justify-center transition-all duration-300 border border-zinc-800 hover:border-[#CDEA68]"
+                  >
+                    <Twitter size={18} />
+                  </a>
+                  <a
+                    href="#"
+                    className="w-10 h-10 bg-zinc-900 hover:bg-[#CDEA68] text-white hover:text-black rounded-full flex items-center justify-center transition-all duration-300 border border-zinc-800 hover:border-[#CDEA68]"
+                  >
+                    <Instagram size={18} />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
-
           {/* Bottom section */}
-          <div className="border-t border-zinc-800 pt-8">
-            <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
-              <div className="flex flex-col md:flex-row items-center space-y-3 md:space-y-0 md:space-x-8 text-gray-400">
-                <p className="text-center md:text-left">
-                  © {currentYear} BePro Business Consultancy
-                </p>
-                <div className="flex space-x-6 text-sm">
-                  <button className="hover:text-[#CDEA68] transition-colors">
-                    Privacy
-                  </button>
-                  <button className="hover:text-[#CDEA68] transition-colors">
-                    Terms
-                  </button>
-                  <button className="hover:text-[#CDEA68] transition-colors">
-                    Cookies
-                  </button>
-                </div>
+          <div className="border-t border-zinc-800 pt-6">
+            <div className="flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm">
+              <p>© {currentYear} BePro Business Consultancy</p>
+              <div className="flex space-x-6 mt-3 md:mt-0">
+                <button className="hover:text-[#CDEA68] transition-colors">
+                  Privacy
+                </button>
+                <button className="hover:text-[#CDEA68] transition-colors">
+                  Terms
+                </button>
+                <button className="hover:text-[#CDEA68] transition-colors">
+                  Cookies
+                </button>
               </div>
-
-              <div className="text-gray-400 text-sm">
+              <p className="mt-3 md:mt-0">
                 Crafted with{' '}
                 <span className="text-[#CDEA68] animate-pulse">●</span> for
                 excellence
-              </div>
+              </p>
             </div>
           </div>
         </div>
