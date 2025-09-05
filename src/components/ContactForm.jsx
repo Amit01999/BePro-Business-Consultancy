@@ -1,113 +1,149 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+// import React, { useEffect, useRef, useState } from 'react';
 
-const ContactForm = () => {
-  const [formData, setFormData] = useState({
-    fullName: '',
-    email: '',
-    phone: '',
-    company: '',
-    subject: '',
-    message: '',
-  });
+// function ContactForm() {
+//   const [rotate, setRotate] = useState(0);
 
-  const handleChange = e => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
+//   useEffect(() => {
+//     window.addEventListener('mousemove', e => {
+//       let mouseX = e.clientX;
+//       let mouseY = e.clientY;
 
-  const handleSubmit = e => {
-    e.preventDefault();
-    console.log('Form Data:', formData);
-    // Here you can send data to backend or email API
-  };
+//       let deltaX = mouseX - window.innerWidth / 2;
+//       let deltaY = mouseY - window.innerHeight / 2;
 
-  const inputClass =
-    'w-full px-4 py-3 bg-transparent border border-[#CDEA68]/30 rounded-lg focus:border-[#CDEA68] focus:ring-2 focus:ring-[#CDEA68]/40 outline-none text-white placeholder-gray-400 transition-all';
+//       var angle = Math.atan2(deltaY, deltaX) * (180 / Math.PI);
+//       setRotate(angle - 180);
+//     });
+//   }, []);
+
+//   return (
+//     <div className="eyes w-full h-screen overflow-hidden">
+//       <div
+//         data-scroll
+//         data-scroll-speed="-.7"
+//         className='w-full relative h-full bg-center bg-cover bg-[url("https://ochi.design/wp-content/uploads/2022/05/Top-Viewbbcbv-1-scaled.jpg")] '
+//       >
+//         {/* Consultation Button */}
+//         <div className="absolute top-8 left-1/2 transform -translate-x-1/2 z-10">
+//           <button className="group relative bg-[#CDEA68] hover:bg-white text-black px-8 py-4 rounded-full font-bold text-lg shadow-2xl transition-all duration-300 hover:scale-105 hover:shadow-3xl border-2 border-transparent hover:border-[#CDEA68]">
+//             <span className="relative z-10">Book 30-Min Free Consultation</span>
+//             <div className="absolute inset-0 bg-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+//           </button>
+//         </div>
+
+//         <div className="absolute gap-10 top-1/2 left-1/2 flex items-center -translate-x-[50%] -translate-y-[50%]">
+//           <div className="flex items-center justify-center w-[30vw] h-[30vw] md:w-[20vw] md:h-[20vw] bg-zinc-100 rounded-full">
+//             <div className="relative w-2/3 h-2/3 rounded-full bg-zinc-900">
+//               <div
+//                 style={{
+//                   transform: `translate(-50%, -50%) rotate(${rotate}deg)`,
+//                 }}
+//                 className="absolute top-1/2 left-1/2 -translate-x-[50%] -translate-y-[50%] line w-full h-10"
+//               >
+//                 <div className="w-5 h-5 md:w-7 md:h-7 rounded-full bg-zinc-100"></div>
+//               </div>
+//             </div>
+//           </div>
+//           <div className="flex items-center justify-center w-[30vw] h-[30vw] md:w-[20vw] md:h-[20vw] bg-zinc-100 rounded-full">
+//             <div className="relative w-2/3 h-2/3 rounded-full bg-zinc-900">
+//               <div
+//                 style={{
+//                   transform: `translate(-50%, -50%) rotate(${rotate}deg)`,
+//                 }}
+//                 className="absolute top-1/2 left-1/2 -translate-x-[50%] -translate-y-[50%] line w-full h-10"
+//               >
+//                 <div className="w-5 h-5 md:w-7 md:h-7 rounded-full bg-zinc-100"></div>
+//               </div>
+//             </div>
+//           </div>
+//         </div>
+
+//         {/* Consultation Button */}
+//         <div className="mt-8">
+//           <button className="group relative bg-[#CDEA68] hover:bg-white text-black px-8 py-4 rounded-full font-bold text-lg shadow-2xl transition-all duration-300 hover:scale-105 hover:shadow-3xl border-2 border-transparent hover:border-[#CDEA68]">
+//             <span className="relative z-10">Book 30-Min Free Consultation</span>
+//             <div className="absolute inset-0 bg-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+//           </button>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default ContactForm;
+
+import React, { useEffect, useState } from 'react';
+
+function ContactForm() {
+  const [rotate, setRotate] = useState(0);
+
+  useEffect(() => {
+    const handleMouseMove = e => {
+      let mouseX = e.clientX;
+      let mouseY = e.clientY;
+
+      let deltaX = mouseX - window.innerWidth / 2;
+      let deltaY = mouseY - window.innerHeight / 2;
+
+      var angle = Math.atan2(deltaY, deltaX) * (180 / Math.PI);
+      setRotate(angle - 180);
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 40 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      className="bg-[#19181E]/60 backdrop-blur-md border border-[#CDEA68]/20 rounded-2xl p-8 shadow-lg max-w-2xl mx-auto my-20"
-    >
-      <h2 className="text-3xl font-bold text-[#CDEA68] mb-6 text-center">
-        Get in Touch
-      </h2>
+    <div id="contact" className="eyes w-full h-screen overflow-hidden">
+      <div
+        data-scroll
+        data-scroll-speed="-.7"
+        className='w-full relative h-full bg-center bg-inherit bg-[url("https://ochi.design/wp-content/uploads/2022/05/Top-Viewbbcbv-1-scaled.jpg")] '
+      >
+        {/* Eyes + Button */}
+        <div className="absolute gap-10 top-1/2 left-1/2 flex items-center -translate-x-[50%] -translate-y-[50%]">
+          {/* Left Eye */}
+          <div className="flex items-center justify-center w-[30vw] h-[30vw] md:w-[23vw] md:h-[20vw] bg-zinc-100 rounded-full">
+            <div className="relative w-2/3 h-2/3 rounded-full bg-zinc-900">
+              <div
+                style={{
+                  transform: `translate(-50%, -50%) rotate(${rotate}deg)`,
+                }}
+                className="absolute top-1/2 left-1/2 -translate-x-[50%] -translate-y-[50%] w-full h-10"
+              >
+                <div className="w-5 h-5 md:w-7 md:h-7 rounded-full bg-zinc-100"></div>
+              </div>
+            </div>
+          </div>
 
-      <form onSubmit={handleSubmit} className="space-y-5">
-        <input
-          type="text"
-          name="fullName"
-          placeholder="Full Name *"
-          required
-          className={inputClass}
-          value={formData.fullName}
-          onChange={handleChange}
-        />
+          {/* Button in Center */}
+          <a
+            href="https://calendar.app.google/TyHZuwgs37EGZxW38"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-center group relative bg-[#CDEA68] hover:bg-white text-black px-8 py-4 rounded-full font-bold text-lg shadow-2xl transition-all duration-300 hover:scale-105 hover:shadow-3xl border-2 border-transparent hover:border-[#CDEA68]"
+          >
+            <span className="relative z-10">Book 30-Min Free Consultation</span>
+            <div className="absolute inset-0 bg-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </a>
 
-        <input
-          type="email"
-          name="email"
-          placeholder="Email Address *"
-          required
-          className={inputClass}
-          value={formData.email}
-          onChange={handleChange}
-        />
-
-        <input
-          type="tel"
-          name="phone"
-          placeholder="Phone Number"
-          className={inputClass}
-          value={formData.phone}
-          onChange={handleChange}
-        />
-
-        <input
-          type="text"
-          name="company"
-          placeholder="Company Name"
-          className={inputClass}
-          value={formData.company}
-          onChange={handleChange}
-        />
-
-        <input
-          type="text"
-          name="subject"
-          placeholder="Subject *"
-          required
-          className={inputClass}
-          value={formData.subject}
-          onChange={handleChange}
-        />
-
-        <textarea
-          name="message"
-          placeholder="Your Message *"
-          required
-          rows="5"
-          className={inputClass}
-          value={formData.message}
-          onChange={handleChange}
-        ></textarea>
-
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.97 }}
-          type="submit"
-          className="w-full py-3 bg-[#CDEA68] text-[#19181E] font-semibold rounded-lg shadow-md hover:shadow-[#CDEA68]/50 transition-all"
-        >
-          Send Message
-        </motion.button>
-      </form>
-    </motion.div>
+          {/* Right Eye */}
+          <div className="flex items-center justify-center w-[30vw] h-[30vw] md:w-[23vw] md:h-[20vw] bg-zinc-100 rounded-full">
+            <div className="relative w-2/3 h-2/3 rounded-full bg-zinc-900">
+              <div
+                style={{
+                  transform: `translate(-50%, -50%) rotate(${rotate}deg)`,
+                }}
+                className="absolute top-1/2 left-1/2 -translate-x-[50%] -translate-y-[50%] w-full h-10"
+              >
+                <div className="w-5 h-5 md:w-7 md:h-7 rounded-full bg-zinc-100"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
-};
+}
 
 export default ContactForm;

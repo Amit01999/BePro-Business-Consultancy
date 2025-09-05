@@ -6,7 +6,7 @@ import herovideo from '../assets/herovideo1.mp4';
 function LandingPageVideo() {
   return (
     <div
-      id="services"
+      id="home"
       data-scroll
       data-scroll-section
       data-scroll-speed="-.3"
