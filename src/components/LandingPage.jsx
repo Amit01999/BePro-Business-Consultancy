@@ -10,7 +10,7 @@ function LandingPageVideo() {
       data-scroll
       data-scroll-section
       data-scroll-speed="-.3"
-      className="w-full h-screen bg-black pt-1 relative"
+      className="w-full h-screen max-sm:h-[60vh] bg-black pt-1 relative max-sm:py-10"
     >
       {/* Background Video */}
       <video
@@ -18,7 +18,7 @@ function LandingPageVideo() {
         loop
         muted
         playsInline
-        className="absolute top-0 left-0 w-full h-full object-cover z-0"
+        className="absolute top-0 left-0 w-full h-full object-cover z-0 "
       >
         <source src={herovideo} type="video/mp4" />
         Your browser does not support the video tag.
@@ -28,7 +28,7 @@ function LandingPageVideo() {
       <div className="absolute inset-0 bg-black bg-opacity-60 z-10"></div>
 
       {/* Content Wrapper */}
-      <div className="textstructure mt-40 px-20 relative z-20">
+      <div className="textstructure mt-28 sm:mt-32 md:mt-40 px-4 sm:px-8 md:px-20 relative z-20 flex flex-col items-center md:items-start">
         {/* {['We Deliver', 'Impactful', 'Solutions'].map((item, index) => {
           return (
             <div className="masker" key={index}>
@@ -51,7 +51,7 @@ function LandingPageVideo() {
         {['We Build ', 'Your Strategic', 'Solutions'].map((item, index) => (
           <div
             key={index}
-            className={`w-fit mx-auto flex items-end justify-center gap-2 ${
+            className={`w-fit md:mx-auto flex items-end justify-center gap-2 ${
               index === 1 ? 'mr-[]' : ''
             }`}
           >
@@ -75,30 +75,32 @@ function LandingPageVideo() {
                 initial={{ y: '100%' }}
                 animate={{ y: 0 }}
                 transition={{ ease: [0.76, 0, 0.24, 1], duration: 1 }}
-                className="font-[IC] text-white/90 uppercase md:text-[6vw] sm:text-[15vw] text-[8vw] md:leading-[7vw] sm:leading-[16vw] leading-[15vw] font-semibold"
+                className="font-[IC] text-white/90 uppercase text-[12vw] sm:text-[10vw] md:text-[6vw] leading-[11vw] sm:leading-[9vw] md:leading-[7vw] font-semibold text-center md:text-left"
               >
                 {item}
               </motion.h1>
             </div>
           </div>
         ))}
-        <div className="border-t-[1px] border-zinc-500 mt-32 flex flex-wrap justify-between gap-3 items-center py-5 px-7 md:px-20">
-          {['For startups and enterprises', 'From ideation to success'].map(
-            (item, index) => (
-              <p
-                key={index}
-                className="text-md font-light tracking-tight leading-none"
-              >
-                {item}
-              </p>
-            )
-          )}
-          <div className="start flex items-center gap-5">
-            <div className="w-full px-2 md:px-4 py-2 border-[1px] border-solid border-[#CDEA68] rounded-full uppercase font-md text-sm">
+        <div className="border-t-[1px] border-zinc-500 mt-12 sm:mt-20 md:mt-32 w-full flex flex-wrap justify-center md:justify-between gap-3 sm:gap-4 items-center py-4 sm:py-5 px-0 sm:px-4 md:px-20">
+          <div className="flex flex-col md:flex-row gap-3 sm:gap-4 text-center md:text-left">
+            {['For startups and enterprises', 'From ideation to success'].map(
+              (item, index) => (
+                <p
+                  key={index}
+                  className="text-xs sm:text-sm md:text-md font-light tracking-tight leading-none"
+                >
+                  {item}
+                </p>
+              )
+            )}
+          </div>
+          <div className="start flex items-center gap-2 sm:gap-3 md:gap-5">
+            <div className="w-auto whitespace-nowrap px-3 sm:px-4 md:px-4 py-2 border-[1px] border-solid border-[#CDEA68] rounded-full uppercase font-md text-xs sm:text-sm">
               Begin the Journey
             </div>
-            <div className="w-8 h-8 p-2 md:w-10 md:h-10 flex items-center justify-center border-[1px] border-solid border-[#CDEA68] rounded-full">
-              <span className="rotate-[45deg]">
+            <div className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 flex items-center justify-center border-[1px] border-solid border-[#CDEA68] rounded-full">
+              <span className="rotate-[45deg] text-sm sm:text-base">
                 <FaArrowUpLong />
               </span>
             </div>

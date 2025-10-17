@@ -193,8 +193,11 @@ export default function Feye({ words = DEFAULT_WORDS }) {
     offscreenCanvas.height = canvas.height;
     const offscreenCtx = offscreenCanvas.getContext('2d');
 
+    // Responsive font size based on canvas width
+    const fontSize = Math.min(canvas.width / 8, 100);
+
     offscreenCtx.fillStyle = 'white';
-    offscreenCtx.font = 'bold 100px Arial';
+    offscreenCtx.font = `bold ${fontSize}px Arial`;
     offscreenCtx.textAlign = 'center';
     offscreenCtx.textBaseline = 'middle';
     offscreenCtx.fillText(word, canvas.width / 2, canvas.height / 2);
