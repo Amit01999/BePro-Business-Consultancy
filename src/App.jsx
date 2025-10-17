@@ -10,6 +10,7 @@ import Footer from './components/Footer';
 import LocomotiveScroll from 'locomotive-scroll';
 import ServicesSection from './components/ServicesSection';
 import ContactForm from './components/ContactForm';
+import Team from './components/Team';
 
 function App() {
   const locomotiveScroll = new LocomotiveScroll();
@@ -23,6 +24,7 @@ function App() {
       <Eyes />
       <ServicesSection />
       <Featured />
+      <Team />
       <ContactForm />
       <Footer />
     </div>
