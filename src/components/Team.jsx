@@ -47,7 +47,7 @@ export default function Team() {
     {
       id: 4,
       name: 'Jerin Tajnin Siddique',
-      designation: 'Sr. Business Analyst',
+      designation: 'Business Analyst',
       image: Tajnin,
       specialty: 'Data Analytics',
     },
