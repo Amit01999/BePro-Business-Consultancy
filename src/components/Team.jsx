@@ -9,6 +9,7 @@ import Rituparna from '../assets/Team/Rituparna.jpg';
 import Azfar from '../assets/Team/Apurbo.jpg';
 import Anik from '../assets/Team/Anik.jpg';
 import Tanmoy from '../assets/Team/Tanmoy.jpg';
+import demo from '../assets/Team/demo.png';
 
 export default function Team() {
   const containerRef = useRef(null);
@@ -27,7 +28,7 @@ export default function Team() {
       id: 2,
       name: 'Muhaiminul Islam Antik',
       designation: 'Managing Director',
-      image: Antik,
+      image: demo,
       specialty: 'Business Development',
     },
     {
